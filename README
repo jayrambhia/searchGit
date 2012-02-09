@@ -1,0 +1,13 @@
+Author 	        : Jay Rambhia
+email 	        : jayrambhia777@gmail.com
+Git 	        : https://github.com/jayrambhia
+gist 	        : https://gist.github.com/jayrambhia
+@jayrambhia     : http://twitter.com/jayrambhia
+Blog            : http://jayrambhia.wordpress.com
+==================================================
+Name	        : searchRepo
+version	        : 0.1
+Git             : https://github.com/jayrambhia/searchRepo
+compatibility   : Linux (Ubuntu tested)
+
+It's a repository of python scripts to search contents on GitHub as well as gists.

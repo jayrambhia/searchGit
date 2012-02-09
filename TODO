@@ -1,0 +1,20 @@
+Author 	        : Jay Rambhia
+email 	        : jayrambhia777@gmail.com
+Git 	        : https://github.com/jayrambhia
+gist 	        : https://gist.github.com/jayrambhia
+@jayrambhia     : http://twitter.com/jayrambhia
+Blog            : http://jayrambhia.wordpress.com
+==================================================
+Name	        : searchRepo
+version	        : 0.1
+Git             : https://github.com/jayrambhia/searchRepo
+compatibility   : Linux (Ubuntu tested)
+
+Things To Do:
+	1. Find bugs and remove them
+	2. Alternate way for more accuracy
+	3. Make scripts for other contents like user, codes, etc
+	4. Search gists
+	5. Download gists
+	6. Download Repositories
+	7. Machine Learning (eg. Which repo will be more useful to the user, etc)

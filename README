@@ -5,7 +5,7 @@ gist 	        : https://gist.github.com/jayrambhia
 @jayrambhia     : http://twitter.com/jayrambhia
 Blog            : http://jayrambhia.wordpress.com
 ==================================================
-Name	        : searchRepo
+Name	        : searchGit
 version	        : 0.1
 Git             : https://github.com/jayrambhia/searchGit
 compatibility   : Linux (Ubuntu tested)

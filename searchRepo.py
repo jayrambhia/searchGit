@@ -9,7 +9,6 @@ Repo : searchGit
 Git : https://github.com/jayrambhia/searchGit
 version 0.1
 '''
-from mechanize import Browser
 from BeautifulSoup import BeautifulSoup
 import urllib2
 
@@ -60,7 +59,8 @@ def getRepo(repo_con_list):
 				elif repo_con['class'] == 'details':
 					repo_detail = getunicode(repo_con)
 #					print repo_detail
-	return [repo_author, repo_url, repo_language, repo_des, repo_detail]
+	repo_detail_dict = {'author':repo_author, 'url':repo_url, 'language':repo_language,'description':repo_des,'detail':repo_detail}
+	return repo_detail_dict
 
 def getURL(language, query, pg_no):
 	base_url = 'https://github.com/search?'
@@ -95,9 +95,9 @@ def searchRepo(soup, repo_dict={}, search_count=0):
 			if div.has_key('class'):
 				if div['class'] == 'result':
 					repo_con_list = div.contents
-					repo_info = getRepo(repo_con_list)
+					repo_detail_dict = getRepo(repo_con_list)
 					search_count+=1
-					repo_dict[search_count] = repo_info
+					repo_dict[search_count] = repo_detail_dict
 	return (repo_dict, search_count)
 
 def doSearch(pg_no, query, language):
@@ -109,15 +109,16 @@ def doSearch(pg_no, query, language):
 
 def repoReader(repo_dict):
 	for i in range(1,len(repo_dict.keys())+1):
-		print i
-		print 'Author:',repo_dict[i][0]
-		print 'URL:','https://github.com'+repo_dict[i][1]
-		print repo_dict[i][2]
-		print ' '.join(repo_dict[i][3].split())
-
+		print 'Repository:',i
+		print 'Author:',repo_dict[i]['author']
+		print 'URL:','https://github.com'+repo_dict[i]['url']
+		print 'language:',repo_dict[i]['language']
+		print 'Description:',' '.join(repo_dict[i]['description'].split())
+		print 'Details:',' '.join(repo_dict[i]['detail'].split())
+		print ''
 def main():
-	proxy = {'http':'http://f2010059:j@10.1.9.36:8080',
-					'https':'https://f2010059:j@10.1.9.36:8080'}
+	proxy = {'http':'http://username:password@proxy:port',
+					'https':'https://username:password@proxy:port'}
 	Proxy = urllib2.ProxyHandler(proxy)
 	opener = urllib2.build_opener(Proxy)
 	urllib2.install_opener(opener)

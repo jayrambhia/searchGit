@@ -9,7 +9,6 @@ Repo : searchGit
 Git : https://github.com/jayrambhia/searchGit
 version 0.1
 '''
-from mechanize import Browser
 from BeautifulSoup import BeautifulSoup
 import urllib2
 

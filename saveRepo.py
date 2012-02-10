@@ -46,7 +46,7 @@ def checkLink(link):
 		if d.has_key('class'):
 			if d['class'] == 'highlight':
 				repo_flag = 1
-				print 'Repo'
+#				print 'Repo'
 				break
 	if repo_flag:
 		saverepo(soup)

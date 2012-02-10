@@ -46,7 +46,7 @@ def checkLink(link):
 		if d.has_key('class'):
 			if d['class'] == 'highlight':
 				repo_flag = 1
-				print 'Repo'
+#				print 'Repo'
 				break
 	if repo_flag:
 		saverepo(soup)
@@ -87,15 +87,24 @@ def mainRepoLink(link):
 	accessLinks(getAllLinks(soup))
 	return	
 
-def main():
+
+def setProxy():
 	proxy = {'http':'http://username:password@proxy:port',
 					'https':'https://username:password@proxy:port'}
 	Proxy = urllib2.ProxyHandler(proxy)
 	opener = urllib2.build_opener(Proxy)
 	urllib2.install_opener(opener)
 
+def setLink(link):
+	#setProxy()
+	if link:
+		mainRepoLink(link)
+	return
+	
+def main():
+	setProxy()
 	link = raw_input('GitHub Repo Link: ')
-	mainRepoLink(link)
+	setLink(link)
 	
 	return
 

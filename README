@@ -5,9 +5,10 @@ gist 	        : https://gist.github.com/jayrambhia
 @jayrambhia     : http://twitter.com/jayrambhia
 Blog            : http://jayrambhia.wordpress.com
 ==================================================
-Name	        : searchRepo
+Name	        : searchGit
 version	        : 0.1
-Git             : https://github.com/jayrambhia/searchRepo
+Git             : https://github.com/jayrambhia/searchGit
 compatibility   : Linux (Ubuntu tested)
 
 It's a repository of python scripts to search contents on GitHub as well as gists.
+If you are behind a proxy, change it accordingly, else just comment opener, proxy, install_opener.

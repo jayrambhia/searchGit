@@ -27,7 +27,11 @@ def getPrintUnicode(soup):
 	
 	body=''
 	if isinstance(soup, unicode):
+		#print soup
 		soup = soup.replace('&#39;',"'")
+		soup = soup.replace('&quot;','"')
+		soup = soup.replace('&nbsp;',' ')
+		#print soup
 		body = body + soup
 	else:
 		if not soup.contents:

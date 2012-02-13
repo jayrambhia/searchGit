@@ -12,34 +12,33 @@ version 0.1
 import saveRepo
 from BeautifulSoup import BeautifulSoup
 import urllib2
+from searchGitUtils import setProxy, getPage, getSoup
+from saveRepo import saveRepo
 
-def getRepoLinks(soup):
-	repo_links=[]
-	links = soup.findAll('h3')
-	for link in links:
-		link_contents = link.contents
-		for link_content in link_contents:
-			if isinstance(link_content, unicode):
-				continue
-			if link_content.has_key('href'):
-				repo_links.append(link_content['href'])
-	return repo_links
+def getRepoURLs(soup):
+	repo_URLs=[]
+	urls = soup.findAll('h3')
+	for url in urls:
+		link = url.find('a',{'href':True})
+		if link:
+			repo_URLs.append(link['href'])
+	return repo_URLs
 
-def main():
-	saveRepo.setProxy()
-	link = 'https://github.com/jayrambhia'
-	#link = raw_input('Github user link: ')
-	page = urllib2.urlopen(link)	
-	soup = BeautifulSoup(page.read())
-
-	repo_links = getRepoLinks(soup)
-
-	for repo_link in repo_links:
-		repo_link = 'https://github.com'+repo_link
-
-		saveRepo.setLink(repo_link)
+def saveUserRepo(url):
+	setProxy()
+	soup = getSoup(getPage(url))
+	repo_url_list = getRepoURLs(soup)
+	for repo_url in repo_url_list:
+		repo_url = 'https://github.com'+repo_url
+		saveRepo(repo_url)
 		print 'Repo Saved'
 	return
-
+	
+def main():
+	url = 'https://github.com/jayrambhia'
+	#url = raw_input('Github user link: ')
+	saveUserRepo(url)
+	return
+	
 if __name__ == '__main__':
 	main()

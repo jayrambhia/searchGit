@@ -31,15 +31,15 @@ def main():
 	#link = raw_input('Github user link: ')
 	page = urllib2.urlopen(link)	
 	soup = BeautifulSoup(page.read())
-	
+
 	repo_links = getRepoLinks(soup)
-	
+
 	for repo_link in repo_links:
 		repo_link = 'https://github.com'+repo_link
-		
+
 		saveRepo.setLink(repo_link)
 		print 'Repo Saved'
 	return
-	
+
 if __name__ == '__main__':
 	main()

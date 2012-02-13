@@ -67,9 +67,9 @@ def getURL(language, query, pg_no):
 	type_url = 'type=Repositories'
 	lang_url = 'language='+language
 	query_url = 'q='+'+'.join(query.split())
-	end_url = 'repo=&langOverride=&x=0&y=0&start_value='+str(pg_no)
-	
-	url = '&'.join([type_url, lang_url, query_url, end_url])
+	end_url = 'repo=&amp;langOverride=&amp;x=0&amp;y=0&amp;start_value='+str(pg_no)
+
+	url = '&amp;'.join([type_url, lang_url, query_url, end_url])
 	URL = base_url+url
 
 	return URL
@@ -125,10 +125,10 @@ def main():
 
 	query = raw_input('query: ')
 	language = raw_input('Language: ')
-	
+
 	if language:
 		language = language.capitalize()
-	
+
 	pg_no = 0
 	search_count = 0
 	repo_dict={}
@@ -143,6 +143,6 @@ def main():
 	#print repo_dict
 	repoReader(repo_dict)
 	return repo_dict
-								
+
 if __name__ == '__main__':
 	main()						

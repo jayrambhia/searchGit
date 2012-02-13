@@ -25,9 +25,9 @@ def saverepo(soup):
 	title = getunicode(title).split()[-3]
 	data_path = os.path.join(os.getcwd(),title,data_path)
 	path, filename = os.path.split(os.path.split(data_path)[0])
-	
+
 	makeDir(path)
-	
+
 	filepath = os.path.join(path, filename)
 	f = open(filepath,'w')
 	for d in div:
@@ -64,7 +64,7 @@ def getAllLinks(soup):
 	link_list=[]
 	for tds in td_list:
 		link_list.append(tds.contents[1]['href'])
-	
+
 	return link_list
 
 def accessLinks(link_list):
@@ -72,7 +72,7 @@ def accessLinks(link_list):
 		link = 'https://github.com'+link
 		checkLink(link)
 	return	
-	
+
 def makeDir(path):
 	if os.path.isdir(path):
 		return
@@ -100,12 +100,12 @@ def setLink(link):
 	if link:
 		mainRepoLink(link)
 	return
-	
+
 def main():
 	setProxy()
 	link = raw_input('GitHub Repo Link: ')
 	setLink(link)
-	
+
 	return
 
 if __name__ == '__main__':

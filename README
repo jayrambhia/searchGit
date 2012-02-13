@@ -1,4 +1,4 @@
-Author 	        : Jay Rambhia
+Author          : Jay Rambhia
 email 	        : jayrambhia777@gmail.com
 Git 	        : https://github.com/jayrambhia
 gist 	        : https://gist.github.com/jayrambhia
@@ -12,3 +12,27 @@ compatibility   : Linux (Ubuntu tested)
 
 It's a repository of python scripts to search contents on GitHub as well as gists.
 If you are behind a proxy, change it accordingly, else just comment opener, proxy, install_opener.
+Or, in the new versions, just comment setProxy().
+
+
+This Repository contains:
+	searchRepo.py
+	saveRepo.py
+	saveUserRepo.py
+	getUnicode.py
+
+1. searchRepo.py
+	Enter query and language. Get all the relevant repositories.
+	$ python searchRepo.py
+
+2. saveRepo.py
+	Enter a repository link. And it will download complete repository.
+	$ python saveRepo.py
+
+3. saveUserRepo.py
+	Enter a user link. It will download all the repositories of that user.
+	$ python saveUserRepo.py
+
+**CAUTION : Sometimes I'm getting TypeError:
+TypeError: writelines() argument must be a sequence of strings
+Need to remove that bug. Help appreciated!

@@ -20,9 +20,11 @@ This Repository contains:
 	saveRepo.py
 	saveUserRepo.py
 	getUnicode.py
+	searchGist.py
+	saveGist.py
 
 1. searchRepo.py
-	Enter query and language. Get all the relevant repositories.
+	Enter query and language. Get all the relevant repositories links.
 	$ python searchRepo.py
 
 2. saveRepo.py
@@ -33,6 +35,15 @@ This Repository contains:
 	Enter a user link. It will download all the repositories of that user.
 	$ python saveUserRepo.py
 
+4. searchGist.py
+	Enter query. Get all the relevant gists links.
+	$ python searchGist.py
+	
+5. saveGist.py
+	Enter the gist link. And it will download the gist.
+	$ python saveGist.py
+	
 **CAUTION : Sometimes I'm getting TypeError:
 TypeError: writelines() argument must be a sequence of strings
+It's because of images that are in the repository.
 Need to remove that bug. Help appreciated!

@@ -29,6 +29,11 @@ version 0.1
 # TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE 
 # SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+from BeautifulSoup import BeautifulSoup
+import urllib2
+from searchGitUtils import getunicode, getPrintUnicode, makeDir, setProxy
+import os
+
 def saveText(soup):
     data_path = soup.find('div',{'class':True,'data-path':True})['data-path']
     title = soup.find('title')

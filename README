@@ -11,7 +11,7 @@ Git             : https://github.com/jayrambhia/searchGit
 compatibility   : Linux (Ubuntu tested)
 
 It's a repository of python scripts to search contents on GitHub as well as gists.
-If you are behind a proxy, change it accordingly, Or, in the new versions, just comment setProxy().
+If you are behind a proxy, change it accordingly in the searchGitUitls.py, otherwise just comment setProxy().
 
 1. searchRepo.py
 	Enter query and language. Get all the relevant repositories links.

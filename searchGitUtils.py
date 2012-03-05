@@ -34,8 +34,17 @@ import os
 from BeautifulSoup import BeautifulSoup
 
 def setProxy():
-    proxy = {'http':'http://f2010059:j@10.1.9.36:8080',
-                    'https':'https://f2010059:j@10.1.9.36:8080'}
+	"""
+	proxy = {'http':'http://jayrambhia:password@10.1.9.36:8080',
+			'https':'https://jayrambhia:password@10.1.9.36:8080'}
+			
+	or
+	
+	proxy = {'http':'http://10.1.9.36:8080',
+			'http':'https://10.1.9.36:8080',}
+	"""
+    proxy = {'http':'http://username:password@proxy:port',
+                    'https':'https://username:password@proxy:port'}
     Proxy = urllib2.ProxyHandler(proxy)
     opener = urllib2.build_opener(Proxy)
     urllib2.install_opener(opener)

@@ -36,31 +36,31 @@ import os
 
 
 def saveText(soup):
-	gistnum = getunicode(soup.find('div',{'class':'path'})).split()[-1]
-	
-	span = soup.find('span',{'class':'code'})			
-	filename = getunicode(span).split()[0]
-	filename = '_'.join([gistnum,filename])		
-	
-	f = open(filename,'w')
-	lines = soup.findAll('div',{'class':'line'})
-	for line in lines:
-		f.writelines(getPrintUnicode(line)+'\n')	
-	f.close()
-	return		
-	
+    gistnum = getunicode(soup.find('div',{'class':'path'})).split()[-1]
+    
+    span = soup.find('span',{'class':'code'})           
+    filename = getunicode(span).split()[0]
+    filename = '_'.join([gistnum,filename])     
+    
+    f = open(filename,'w')
+    lines = soup.findAll('div',{'class':'line'})
+    for line in lines:
+        f.writelines(getPrintUnicode(line)+'\n')    
+    f.close()
+    return      
+    
 def saveGist(url):
-	setProxy()
-	page = getPage(url)
-	soup = getSoup(page)
-	saveGist(soup)	
-	
+    setProxy()
+    page = getPage(url)
+    soup = getSoup(page)
+    saveText(soup)  
+    
 def main():
-	url = raw_input('gist URL: ')
-	getgist(url)
-	
-	return
+    url = raw_input('gist URL: ')
+    saveGist(url)
+    
+    return
 
 if __name__ == '__main__':
-	main()
+    main()
 
